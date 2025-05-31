@@ -13,14 +13,29 @@ laptop (32 GB RAM).
 
 ## Quick start
 
+### 1. Download the model. 
+NOTE: Run within ai-upskill/stage01_rag/week1/hello_rag
 ```bash
-# 0. inside ai-upskill/stage01_rag/week1/hello_rag
 huggingface-cli download microsoft/Phi-3-mini-4k-instruct-gguf Phi-3-mini-4k-instruct-q4.gguf --local-dir models
+```
 
-docker compose pull          # fetch qdrant + llama images
-docker compose up -d --build # build FastAPI and start all services
-python ingest.py             # load sample docs (place *.txt in ./data)
+### 2. Fetch qdrant + llama images
+```bash
+docker compose pull
+```
 
+### 3. Build FastAPI and start all services
+```bash
+docker compose up -d --build
+```
+
+### 4. Load sample docs (place *.txt in ./data)
+```bash
+python ingest.py
+```
+
+### 5. Query the model (Postman example attched below)
+```bash
 curl -X POST localhost:8000/query \
      -H "content-type: application/json" \
      -d '{"question":"What is this repo about?"}'
@@ -29,18 +44,19 @@ curl -X POST localhost:8000/query \
 ## When things go well
 
 ```bash
-ai-upskill\stage01_rag\week1\hello_rag> python ingest.py  
+PS> python ingest.py  
 Ingested 1 documents into collection 'docs'.
-ai-upskill\stage01_rag\week1\hello_rag>
+PS>
 ```
 
 ```bash
-ai-upskill\stage01_rag\week1\hello_rag> docker ps
+PS> docker ps
 CONTAINER ID   IMAGE                               COMMAND                  CREATED         STATUS                     PORTS                              NAMES
 c37690cd3184   hello_rag-api                       "uvicorn main:app --…"   8 minutes ago   Up 8 minutes               0.0.0.0:8000->8000/tcp             hello_rag-api-1
 87301378e6c4   qdrant/qdrant                       "./entrypoint.sh"        8 minutes ago   Up 8 minutes               0.0.0.0:6333->6333/tcp, 6334/tcp   hello_rag-qdrant-1
 8e2a6f24fc73   ghcr.io/ggml-org/llama.cpp:server   "/app/llama-server -…"   8 minutes ago   Up 8 minutes               0.0.0.0:8001->8000/tcp             llama-cpu
 ai-upskill\stage01_rag\week1\hello_rag
+PS>
 ```
 
 ![alt text](image.png)

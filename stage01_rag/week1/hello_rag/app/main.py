@@ -30,7 +30,7 @@ async def rag(q: Query):
             {"role": "user", "content": f"{context}\n---\n{q.question}"}
         ],
         "stream": False,
-        "max_tokens": 200
+        "max_tokens": 100
     }
     async with httpx.AsyncClient(timeout=60) as cli:
         resp = await cli.post(LLM_URL, json=payload)
