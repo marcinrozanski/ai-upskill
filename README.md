@@ -1,4 +1,4 @@
-# ⛵ AI-Infrastructure Upskill Journey  
+# ⛵ AI Infrastructure Upskill Journey  
 *A hands-on path to upskill in private AI*
 
 ---
@@ -6,9 +6,7 @@
 ## About this repository
 
 It is designed to work on a Windows 11 PC with Docker installed.
-For now I'm using a 2018 Dell Inspirion 5370 laptop with 32GB RAM, i5 CPU , 1TB SSD, but without a GPU.
-
-It feels like I should justify why I'm using Windows, well I need it to run few pieces of HAM radio software, and with WSL installed Windows isn't so bad. Plus I'm too old to participate in OS flame wars.
+For now I'm using a 2018 Dell Inspirion 5370 laptop with 32GB RAM, i5 CPU , 1TB SSD, but without a GPU. However, it feels that a hardware upgrade is due!
 
 This repo mirrors the five practical stages we mapped out together:
 
