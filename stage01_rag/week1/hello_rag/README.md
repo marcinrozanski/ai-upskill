@@ -1,7 +1,7 @@
-# hello-rag
+# hello rag
 
-Minimal Retrieval-Augmented Generation stack that fits on a CPU-only
-laptop (32 GB RAM).
+Minimal Retrieval Augmented Generation stack that fits on a CPU only
+laptop with 32 GB RAM.
 
 ## Stack
 
@@ -60,3 +60,9 @@ PS>
 ```
 
 ![alt text](image.png)
+
+## Lack of GPU is casing high CPU usage
+
+I sometimes get timeouts from my queries, I guess I could extend the timeout value, but so far I've tried adjusting the amount of tokens.
+
+![alt text](image-1.png)
